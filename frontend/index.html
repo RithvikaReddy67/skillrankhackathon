@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semantic Product Search</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <a href="#" class="logo" onclick="showHome(); return false;">🔍 Product Search</a>
+      <p class="status" id="status">Loading…</p>
+    </header>
+
+    <main id="main">
+      <!-- Homepage -->
+      <section class="home" id="home">
+        <h1>Search thousands of products in plain English</h1>
+        <p class="subtitle">Try: "waterproof bluetooth speaker" or "affordable laptop for video editing under 60k"</p>
+        <div class="search-box">
+          <input type="text" id="query" placeholder="Search 34,000 products..." autocomplete="off" aria-label="Search">
+          <button type="button" id="btnSearch">Search</button>
+        </div>
+        <div class="suggestions" id="suggestions"></div>
+      </section>
+
+      <!-- Results -->
+      <section class="results hidden" id="results">
+        <div class="results-header">
+          <div class="search-box inline">
+            <input type="text" id="queryResults" placeholder="Search..." aria-label="Search">
+            <button type="button" id="btnSearchResults">Search</button>
+          </div>
+        </div>
+
+        <div class="query-display" id="queryDisplay"></div>
+
+        <div class="understanding" id="understanding"></div>
+
+        <div class="filters" id="filters">
+          <label>Min rating <select id="filterRating"><option value="0">All</option><option value="3">3★+</option><option value="4">4★+</option></select></label>
+          <label>Price min <input type="number" id="filterPriceMin" placeholder="₹" min="0"></label>
+          <label>Price max <input type="number" id="filterPriceMax" placeholder="₹" min="0"></label>
+          <button type="button" id="btnApplyFilters">Apply filters</button>
+        </div>
+
+        <div class="latency" id="latency"></div>
+        <div class="results-list" id="resultsList"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Natural language search</span>
+      <span>•</span>
+      <span>Filters: price, brand, category, ratings</span>
+      <span>•</span>
+      <span>Search suggestions</span>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

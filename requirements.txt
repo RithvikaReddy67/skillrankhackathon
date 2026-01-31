@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+pandas
+numpy
+faiss-cpu
+sentence-transformers
+scikit-learn
+openai>=1.0.0
